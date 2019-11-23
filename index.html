@@ -1,43 +1,82 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,500,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<div class="page-wrapper">
-  <div class="card">
+  <div class="page-wrapper">
+    <div class="card">
+      <div class="card-bg-flag">
+
+      </div>
+
+      <div></div>
       <div class="card-data">
         <img class="card-data_icon" src="./images/chip.png" alt="icon chip card">
         <img class="card-data_icon" src="./images/visa.png" alt="icon visa">
       </div>
       <ul class="card-number">
-            <li><div class="card-number__item">#</div></li>
-            <li><div class="card-number__item">#</div></li>
-            <li><div class="card-number__item">#</div></li>
-            <li><div class="card-number__item">#</div></li>
-            <li><div class="card-number__item">#</div></li>
-            <li><div class="card-number__item">#</div></li>
-            <li><div class="card-number__item">#</div></li>
-            <li><div class="card-number__item">#</div></li>
-            <li><div class="card-number__item">#</div></li>
-            <li><div class="card-number__item">#</div></li>
-            <li><div class="card-number__item">#</div></li>
-            <li><div class="card-number__item">#</div></li>
-            <li><div class="card-number__item">#</div></li>
-            <li><div class="card-number__item">#</div></li>
-            <li><div class="card-number__item">#</div></li>
-            <li><div class="card-number__item">#</div></li>
+        <li>
+          <div class="card-number__item">#</div>
+        </li>
+        <li>
+          <div class="card-number__item">#</div>
+        </li>
+        <li>
+          <div class="card-number__item">#</div>
+        </li>
+        <li>
+          <div class="card-number__item">#</div>
+        </li>
+        <li>
+          <div class="card-number__item">#</div>
+        </li>
+        <li>
+          <div class="card-number__item">#</div>
+        </li>
+        <li>
+          <div class="card-number__item">#</div>
+        </li>
+        <li>
+          <div class="card-number__item">#</div>
+        </li>
+        <li>
+          <div class="card-number__item">#</div>
+        </li>
+        <li>
+          <div class="card-number__item">#</div>
+        </li>
+        <li>
+          <div class="card-number__item">#</div>
+        </li>
+        <li>
+          <div class="card-number__item">#</div>
+        </li>
+        <li>
+          <div class="card-number__item">#</div>
+        </li>
+        <li>
+          <div class="card-number__item">#</div>
+        </li>
+        <li>
+          <div class="card-number__item">#</div>
+        </li>
+        <li>
+          <div class="card-number__item">#</div>
+        </li>
       </ul>
       <div class="card-data">
         <div class="card-data_wrapper">
           <span class="card-data__description">Card Holder</span>
-          <span class="card-data__information">FULL NAME</span>
+          <span class="card-data__information" name="card-user-name">FULL NAME</span>
         </div>
         <div class="card-data_wrapper">
           <span class="card-data__description">Expires</span>
@@ -47,42 +86,61 @@
             <span class="card-data__information">YY</span>
           </div>
 
-        </div>  
+        </div>
       </div>
-  </div>
-  <div class="page-data">
-    <div class="page-data__item">
-      <span class="page-data__description">Card Number</span>
-      <input class="page-data__input" type="text" name="card-number">
     </div>
-    <div class="page-data__item">
-      <span class="page-data__description">Card Name</span>
-      <input class="page-data__input" type="text" name="card-name">
+    <div class="card-bg-wrapper">
+      <div class="card-bg card-bg-1">
+
+      </div>
+      <div class="card-bg card-bg-2">
+
+      </div>
+      <div class="card-bg card-bg-3">
+
+      </div>
+      <div class="card-bg card-bg-4">
+
+      </div>
+      <div class="card-bg card-bg-5">
+
+      </div>
+
     </div>
-    <div class="page-data__item-wrapper">
+    <div class="page-data">
+      <div class="page-data__item">
+        <span class="page-data__description">Card Number</span>
+        <input class="page-data__input" type="text" name="card-number">
+      </div>
+      <div class="page-data__item">
+        <span class="page-data__description">Card Name</span>
+        <input class="page-data__input" type="text" name="card-name">
+      </div>
+      <div class="page-data__item-wrapper">
         <div class="page-data__item">
-            <span class="page-data__description">Expiration Date</span>
-            <div class="page-data__date">
-                <select class="data__date" name="month">
-                    <option>Month</option>
-                  </select>
-                  <select class="data__date" name="year">
-                      <option>Year</option>
-                  </select>
-            </div>
+          <span class="page-data__description">Expiration Date</span>
+          <div class="page-data__date">
+            <select class="data__date" name="month">
+              <option>Month</option>
+            </select>
+            <select class="data__date" name="year">
+              <option>Year</option>
+            </select>
+          </div>
 
         </div>
         <div class="page-data__item page-data__item_cvv">
-            <span class="page-data__description">CVV</span>
-            <input  class="data__cvv">  
+          <span class="page-data__description">CVV</span>
+          <input class="data__cvv">
         </div>
       </div>
       <button class="button-submit">Submit</button>
 
 
+    </div>
   </div>
-</div>
 
 </body>
 <script src="script.js"></script>
+
 </html>
