@@ -25,6 +25,8 @@
             this.cardDate = document.querySelector('.card-data_wrapper__date')
             this.pageCvv = document.querySelector('.data__cvv')    
             this.cardCvv = document.querySelector('.card-data__cvv')
+            this.cardFront = document.querySelector('.card-front')
+            this.cardBack = document.querySelector('.card-data__back')
             this.cardBgs = [];
             document.querySelectorAll(".card-bg").forEach(e => this.cardBgs.push(e))
         },
@@ -108,6 +110,14 @@
                     spanCvv.innerText = '*'
                       self.cardCvv.appendChild(spanCvv)
                 }
+            })
+            self.pageCvv.addEventListener('focus', function(){
+                self.cardFront.classList.add('hide')
+                self.cardBack.classList.remove('hide')       
+            })
+            self.pageCvv.addEventListener('blur', function(){
+                self.cardFront.classList.remove('hide')
+                self.cardBack.classList.add('hide')       
             })
             self.cardBgFlag.addEventListener('click', function () {
                 if (self.cardBgWrap.classList.contains('card-bg-wrapper_new-position')) {
