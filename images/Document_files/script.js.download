@@ -87,11 +87,11 @@
                 })
             })
 
-            self.month.addEventListener('focus', function(e){
+            self.month.addEventListener('change', function(e){
                 self.cardDate.classList.add('card-border')
                 self.cardMonth.innerText = self.month.value
             })
-            self.year.addEventListener('focus', function(e){
+            self.year.addEventListener('change', function(e){
                 self.cardDate.classList.add('card-border')
                 self.cardYear.innerText = self.year.value
             })
@@ -106,25 +106,12 @@
             self.pageCvv.addEventListener('input', function(){
                 var regNumber = (/[^0-9]/g)
                 if(!regNumber.test(self.pageCvv.value)){
-                    var spanCvv = document.createElement('span')
-                    spanCvv.innerText = '*'
-                    if(self.cardCvv.childElementCount < self.pageCvv.value.length){
-                        self.cardCvv.appendChild(spanCvv)
-                    }
-                    else{
-                        self.cardCvv.removeChild(self.cardCvv.children[self.cardCvv.children.length-1])
-                    }
                     
-                      
+                    // var spanCvv = document.createElement('span')
+                    // spanCvv.innerText = '*'
+                    //   self.cardCvv.appendChild(spanCvv)
                 }
             })
-            self.pageCvv.addEventListener('focus', function(){
-                self.card.classList.add('is-flipped')
-            })
-            self.pageCvv.addEventListener('blur', function(){
-                self.card.classList.remove('is-flipped')
-            })
-
             self.pageCvv.addEventListener('focus', function(){
                 self.cardFront.classList.add('hide')
                 self.cardBack.classList.remove('hide')       

@@ -1,14 +1,12 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://127.0.0.1:5500/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,500,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link href="./Document_files/css" rel="stylesheet">
+  <link rel="stylesheet" href="./Document_files/style.css">
 </head>
 
 <body>
@@ -17,12 +15,12 @@
       <div class="card-bg-flag">
 
       </div>
-       
-      <div class="card-front ">
+
+      <div class="card-front">
  
         <div class="card-data">
-          <img class="card-data_icon" src="./images/chip.png" alt="icon chip card">
-          <img class="card-data_icon" src="./images/visa.png" alt="icon visa">
+          <img class="card-data_icon" src="./Document_files/chip.png" alt="icon chip card">
+          <img class="card-data_icon" src="./Document_files/visa.png" alt="icon visa">
         </div>
         <ul class="card-number">
           <li>
@@ -91,20 +89,20 @@
         </div>
       </div>
       
-      <div class="card-data__back card__face--back">
+      <div class="card-data__back hide">
         <div class="card__black-line">
 
         </div>
-        <div >
+        <div>
           <p class="card-data__description_cvv">
             CVV
           </p>
           <div class="card-data__cvv">
 
-          </div>
+          <span>*</span><span>*</span><span>*</span><span>*</span><span>*</span><span>*</span><span>*</span><span>*</span></div>
           
         </div>
-        <img class="card-data_icon-back" src="./images/visa.png" alt="icon visa">
+        <img class="card-data_icon-back" src="./Document_files/visa.png" alt="icon visa">
 
 
       </div>
@@ -147,10 +145,10 @@
           <div class="page-data__date">
             <select class="data__date" name="month">
               <option selected="true" disabled="disabled">Month</option>
-            </select>
+            <option>01</option><option>02</option><option>03</option><option>04</option><option>05</option><option>06</option><option>07</option><option>08</option><option>09</option><option>10</option><option>11</option><option>12</option></select>
             <select class="data__date" name="year">
               <option selected="true" disabled="disabled">Year</option>
-            </select>
+            <option>2019</option><option>2020</option><option>2021</option><option>2022</option><option>2023</option><option>2024</option><option>2025</option><option>2026</option><option>2027</option><option>2028</option><option>2029</option><option>2030</option><option>2031</option><option>2032</option><option>2033</option><option>2034</option><option>2035</option><option>2036</option><option>2037</option><option>2038</option></select>
           </div>
 
         </div>
@@ -165,7 +163,44 @@
     </div>
   </div>
 
-</body>
-<script src="script.js"></script>
+<!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<script src="./Document_files/script.js.download"></script>
 
-</html>
+</body></html>

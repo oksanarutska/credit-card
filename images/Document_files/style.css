@@ -40,8 +40,6 @@ body{
     background-image: url("images/bg-card.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    transition: transform 1s;
-    transform-style: preserve-3d;
 }
 .card-front{
     height: 100%;
@@ -270,14 +268,10 @@ body{
     font-size: 1.6rem;
     color: #000;
 }
-.is-flipped {
-    transform: rotateY(180deg);
-}
 
 .error-border{
     border: 1px solid red;
 }
-
 .error-message{
     display: none;
     position: absolute;
