@@ -25,8 +25,7 @@ body{
 }
 .card{
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    left: calc(50% - 172.5px);
     top: -80px;
     z-index: 20;
     display: flex;
@@ -62,6 +61,7 @@ body{
     cursor: pointer;
 }
 .card-bg-wrapper{
+    display: none;
     position: absolute;
     top: -50px;
     /* right: -140px; */
@@ -104,6 +104,8 @@ body{
 
 
 .card-bg-wrapper_new-position{
+    display: block;
+
     right: -140px;
     z-index: 10;
 }
@@ -236,6 +238,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transform: rotateY(-180deg);
 }
 .card__black-line{
     position: relative;
@@ -274,11 +277,22 @@ body{
     transform: rotateY(180deg);
 }
 
+
 .error-border{
     border: 1px solid red;
 }
 
 .error-message{
+    display: none;
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1rem;
+    text-align: center;
+    color: red;
+}
+.error-message-name{
     display: none;
     position: absolute;
     bottom: -25px;

@@ -17,6 +17,7 @@
             this.cardNumber = document.querySelector('[name="card-number"]');
             this.cardUserNumber = document.querySelector('.card-number');
             this.cardError = document.querySelector('.error-message');
+            this.cardErrorName = document.querySelector('.error-message-name');
             this.cardNumberElement = [...document.querySelectorAll(".card-number__item")];
             this.month = document.querySelector("select[name='month']");
             this.year = document.querySelector("select[name='year']");
@@ -29,32 +30,43 @@
             this.cardBack = document.querySelector('.card-data__back')
             this.cardBgs = [];
             document.querySelectorAll(".card-bg").forEach(e => this.cardBgs.push(e))
+
         },
         bindEvent: function () {
             var self = this;
-
+           
             self.cardName.addEventListener('input', function () {
-                if(self.cardName.value){
-                    self.cardUserNameWr.classList.add('card-border')
-                    self.cardUserName.innerText = self.cardName.value
+                var regNumber = (/[^0-9]/g)
+                self.cardUserNameWr.classList.add('card-border')
+                if(self.cardName.value.length > 0){
+                    if(regNumber.test(self.cardName.value)){
+                        self.cardUserName.innerText = self.cardName.value 
+                        self.cardNumber.classList.remove('error-border');
+                        self.cardErrorName.classList.remove('show')
+                    }
+                    else{
+                        console.log(self.cardName.value)
+                        self.cardName.value =  self.cardName.value.replace(regNumber, '')
+                        self.cardUserNameWr.classList.remove('card-border');
+                        self.cardName.classList.add('error-border');
+                        self.cardErrorName.classList.add('show')
+                    }
                 }
                 else{
-                    self.cardUserNameWr.classList.remove('card-border')
                     self.cardUserName.innerText = 'FULL NAME'
-                }
-               
 
+                }           
             })
             self.cardName.addEventListener('blur', function () {
                 self.cardUserNameWr.classList.remove('card-border')
 
             })
 
-            self.cardNumber.addEventListener('input', function () {
-                var regNumber = (/[^0-9]/g)
+            self.cardNumber.addEventListener('input', function (e) {
+                var regString = /[-\.;":'/a-zA-Zа-яА-Я ]/
                 self.cardError.classList.remove('show')
                 self.cardNumber.classList.remove('error-border')
-                if (!regNumber.test(self.cardNumber.value)) {
+                if (!regString.test(self.cardNumber.value)) {
                     self.cardUserNumber.classList.add('card-border')
                     for (var i = 0; i < self.cardNumberElement.length; i++) {
                         self.cardNumberElement[i].innerText = self.cardNumber.value[i]
@@ -63,6 +75,7 @@
                     }
                 }
                 else {
+                    self.cardNumber.value = self.cardNumber.value.replace(regString, '')
                     self.cardUserNumber.classList.remove('card-border')
                     self.cardNumber.classList.add('error-border')
                     self.cardError.classList.add('show')
@@ -87,13 +100,19 @@
                 })
             })
 
-            self.month.addEventListener('focus', function(e){
+            self.month.addEventListener('change', function(e){
                 self.cardDate.classList.add('card-border')
                 self.cardMonth.innerText = self.month.value
             })
-            self.year.addEventListener('focus', function(e){
+            self.year.addEventListener('change', function(e){
                 self.cardDate.classList.add('card-border')
                 self.cardYear.innerText = self.year.value
+            })
+            self.month.addEventListener('focus', function(e){
+                self.cardDate.classList.add('card-border')
+            })
+            self.year.addEventListener('focus', function(e){
+                self.cardDate.classList.add('card-border')
             })
             self.month.addEventListener('blur', function () {
                 self.cardDate.classList.remove('card-border')
@@ -104,8 +123,10 @@
 
             })
             self.pageCvv.addEventListener('input', function(){
-                var regNumber = (/[^0-9]/g)
-                if(!regNumber.test(self.pageCvv.value)){
+                var regString = /[-\.;":'/a-zA-Zа-яА-Я ]/
+                
+                if(!regString.test(self.pageCvv.value)){
+                    self.pageCvv.classList.remove('error-border')
                     var spanCvv = document.createElement('span')
                     spanCvv.innerText = '*'
                     if(self.cardCvv.childElementCount < self.pageCvv.value.length){
@@ -114,9 +135,13 @@
                     else{
                         self.cardCvv.removeChild(self.cardCvv.children[self.cardCvv.children.length-1])
                     }
-                    
-                      
+                  
                 }
+                else{
+                    self.pageCvv.value =  self.pageCvv.value.replace(regString, '')
+                    self.pageCvv.classList.add('error-border')   
+                }
+                
             })
             self.pageCvv.addEventListener('focus', function(){
                 self.card.classList.add('is-flipped')
