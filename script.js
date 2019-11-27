@@ -36,16 +36,15 @@
             var self = this;
            
             self.cardName.addEventListener('input', function () {
-                var regNumber = (/[^0-9]/g)
+                var regNumber = (/[0-9]/g)
                 self.cardUserNameWr.classList.add('card-border')
                 if(self.cardName.value.length > 0){
-                    if(regNumber.test(self.cardName.value)){
+                    if(!regNumber.test(self.cardName.value)){
                         self.cardUserName.innerText = self.cardName.value 
                         self.cardNumber.classList.remove('error-border');
                         self.cardErrorName.classList.remove('show')
                     }
                     else{
-                        console.log(self.cardName.value)
                         self.cardName.value =  self.cardName.value.replace(regNumber, '')
                         self.cardUserNameWr.classList.remove('card-border');
                         self.cardName.classList.add('error-border');
