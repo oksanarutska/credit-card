@@ -219,6 +219,7 @@ body{
 
 }
 .button-submit{
+    cursor: pointer;
     width: 100%;
     padding: 13px 0 14px 0;
     border: none;
@@ -230,6 +231,10 @@ body{
     cursor: pointer;
 }
 .button-submit:hover{
+    background-color: cornflowerblue;
+}
+.button-error{
+    cursor: no-drop;
     background-color: cornflowerblue;
 }
 .card-data__back{
